@@ -1,1 +1,6 @@
 Listar os Produtos sem Estoque;
+   SELECT Produtcts.productname
+     FROM Products 
+LEFT JOIN Stocks 
+       ON Products.products_id = Stocks_products_id
+WHERE Stocks.quantity IS NULL OR Stocks.quantity = 0;
