@@ -1,1 +1,7 @@
 Listar os Produtos que não tenham sido comprados
+    SELECT Products.product_id
+     FROM Products
+LEFT JOIN Orderitems 
+       ON Products.product_id = Orderitems.product_id
+    WHERE Orderitems.order_id IS NULL
+    
