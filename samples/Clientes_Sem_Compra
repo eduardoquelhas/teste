@@ -1,1 +1,6 @@
 Listar todos Clientes que não tenham realizado uma compra
+SELECT Customers.FirstName
+  FROM Customers 
+  LEFT JOIN Orders
+    ON  Customers.customers_ID = Orders.customers_ID = 
+  WHERE Orders.orders_id IS NULL;
