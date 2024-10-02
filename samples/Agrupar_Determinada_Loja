@@ -1,1 +1,14 @@
 Agrupar a quantidade de vendas que uma determinada Marca por Loja.
+   SELECT Stores.stores_id , stores.storname, SUM(Orderitems.quantity) AS TotalVendas
+    FROM Orderitems
+    JOIN Orders 
+      ON Ordersitems.order_id = Orders.order_id
+    JOIN Products 
+       ON Ordersitems.product_id = Products.products_id
+     JOIN Stores 
+       ON Orders.store_id = Stores.store_id
+     JOIN Brands 
+      ON  Products.brand_id = Brands.brand_id
+ WHERE Brands.brand_id = @Produto_Especifico
+GROUP BY Stores.store_id , Stores.storname;
+    
