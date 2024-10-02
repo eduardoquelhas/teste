@@ -1,1 +1,6 @@
 Listar os Funcionarios que não estejam relacionados a um Pedido.
+    SELECT Staffs.staff_id
+     FROM Staffs
+LEFT JOIN Orders 
+       ON Staffs.staff_id = Orders.staff_id
+WHERE Orders.order_id IS NULL;
